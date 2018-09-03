@@ -1,5 +1,7 @@
 package numericSystem;
 
+import exception.IsZeroException;
+
 public class RationalNumber<T extends Number> implements IRationalNumber<RationalNumber<Number>> {
 
 	
@@ -16,6 +18,60 @@ public class RationalNumber<T extends Number> implements IRationalNumber<Rationa
 		
 	}
 	
+	 
+	 
+	 
+	 public boolean isZero() throws IsZeroException {
+		 boolean isZero=false;
+		 if (this.numerador instanceof Long|| this.denominador instanceof Long) {
+			 
+				if(this.numerador.longValue()==0) {
+				isZero=true;	
+				}else if(this.denominador.longValue()==0) {
+					new  IsZeroException("Fraccion no definida");
+					
+				}
+				
+			}else if (this.numerador instanceof Short) {
+				 if(this.denominador instanceof Integer) {
+						if(this.numerador.shortValue()==0) {
+							isZero=true;	
+							}else if(this.denominador.intValue()==0) {
+								new  IsZeroException("Fraccion no definida");
+								
+							}		
+				 }}
+			else if (this.denominador instanceof Short) {
+				if(this.numerador.shortValue()==0) {
+					isZero=true;	
+					}else if(this.denominador.shortValue()==0) {
+						new  IsZeroException("Fraccion no definida");
+						
+					
+			}}
+			else if(this.numerador instanceof Integer) {
+				if(this.denominador instanceof Short) {
+					if(this.numerador.intValue()==0) {
+						isZero=true;	
+						}else if(this.denominador.shortValue()==0) {
+							new  IsZeroException("Fraccion no definida");
+							
+						}
+				}else if(this.denominador instanceof Integer) {
+					if(this.numerador.intValue()==0) {
+						isZero=true;	
+						}else if(this.denominador.intValue()==0) {
+							new  IsZeroException("Fraccion no definida");
+							
+						}
+				}
+			}
+		 
+		 
+		 
+		 
+		 return isZero;
+	 }
 	
 	
 	@Override
@@ -159,30 +215,31 @@ public class RationalNumber<T extends Number> implements IRationalNumber<Rationa
 	@Override
 	public void simplifyRational() {
 		
-		T mx= maxCoDiv();
-	
-		if (this.numerador instanceof Long|| this.denominador instanceof Long) {
-			this.numerador =(T)Long.valueOf(this.numerador.longValue()/Math.abs(mx.longValue()));
-			this.denominador=(T)Long.valueOf(this.denominador.longValue()/Math.abs(mx.longValue()));
 			
-		}else if (this.numerador instanceof Short) {
-			 if(this.denominador instanceof Integer) {
+			T mx= maxCoDiv();
+
+			if (this.numerador instanceof Long|| this.denominador instanceof Long) {
+				this.numerador =(T)Long.valueOf(this.numerador.longValue()/Math.abs(mx.longValue()));
+				this.denominador=(T)Long.valueOf(this.denominador.longValue()/Math.abs(mx.longValue()));
+				
+			}else if (this.numerador instanceof Short) {
+				 if(this.denominador instanceof Integer) {
+					 this.numerador =(T)Short.valueOf((short)(this.numerador.shortValue()/Math.abs(mx.shortValue())));
+						this.denominador=(T)Integer.valueOf(this.denominador.intValue()/Math.abs(mx.intValue()));
+				 }
+			else if (this.denominador instanceof Short) {
 				 this.numerador =(T)Short.valueOf((short)(this.numerador.shortValue()/Math.abs(mx.shortValue())));
+				 this.denominador =(T)Short.valueOf((short)(this.denominador.shortValue()/Math.abs(mx.shortValue())));
+				
+			}}
+			else if(this.numerador instanceof Integer) {
+				if(this.denominador instanceof Short) {
+					this.denominador =(T)Short.valueOf((short)(this.denominador.shortValue()/Math.abs(mx.shortValue())));
+					this.numerador=(T)Integer.valueOf(this.numerador.intValue()/Math.abs(mx.intValue()));
+				}else if(this.denominador instanceof Integer) {
+					this.numerador=(T)Integer.valueOf(this.numerador.intValue()/Math.abs(mx.intValue()));
 					this.denominador=(T)Integer.valueOf(this.denominador.intValue()/Math.abs(mx.intValue()));
-			 }
-		else if (this.denominador instanceof Short) {
-			 this.numerador =(T)Short.valueOf((short)(this.numerador.shortValue()/Math.abs(mx.shortValue())));
-			 this.denominador =(T)Short.valueOf((short)(this.denominador.shortValue()/Math.abs(mx.shortValue())));
-			
-		}}
-		else if(this.numerador instanceof Integer) {
-			if(this.denominador instanceof Short) {
-				this.denominador =(T)Short.valueOf((short)(this.denominador.shortValue()/Math.abs(mx.shortValue())));
-				this.numerador=(T)Integer.valueOf(this.numerador.intValue()/Math.abs(mx.intValue()));
-			}else if(this.denominador instanceof Integer) {
-				this.numerador=(T)Integer.valueOf(this.numerador.intValue()/Math.abs(mx.intValue()));
-				this.denominador=(T)Integer.valueOf(this.denominador.intValue()/Math.abs(mx.intValue()));
-			}}	
+				}}	
 	}
 
 	
@@ -246,12 +303,24 @@ public class RationalNumber<T extends Number> implements IRationalNumber<Rationa
 	}
 	@Override
 	public void rationalInverse() {
-		T number= this.numerador;
-		this.numerador= this.denominador;
-		this.denominador= number;
-		simplifyRational();
 		
 		
+		try {
+			if(!isZero()) {
+			T number= this.numerador;
+			this.numerador= this.denominador;
+			this.denominador= number;
+			simplifyRational();
+			
+			}else {
+				this.numerador=this.numerador;
+				this.denominador=this.denominador;
+				
+			}
+		} catch (IsZeroException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 		
