@@ -9,28 +9,28 @@
 
 <AnchorPane prefHeight="538.0" prefWidth="361.0" style="-fx-background-color: #010101;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
    <children>
-      <TextField layoutX="22.0" layoutY="54.0" prefHeight="43.0" prefWidth="62.0" />
-      <Button layoutX="259.0" layoutY="382.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="-">
+      <TextField fx:id="num1" layoutX="22.0" layoutY="54.0" prefHeight="43.0" prefWidth="62.0" />
+      <Button fx:id="substract" layoutX="259.0" layoutY="382.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="-">
          <font>
             <Font size="27.0" />
          </font>
       </Button>
-      <Button layoutX="259.0" layoutY="318.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="/">
+      <Button fx:id="diving" layoutX="259.0" layoutY="318.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="/">
          <font>
             <Font size="27.0" />
          </font>
       </Button>
-      <Button layoutX="259.0" layoutY="250.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="*">
+      <Button fx:id="multiplying" layoutX="259.0" layoutY="250.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="*">
          <font>
             <Font size="27.0" />
          </font>
       </Button>
-      <Button layoutX="259.0" layoutY="447.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="+">
+      <Button fx:id="adding" layoutX="259.0" layoutY="447.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="+">
          <font>
             <Font size="27.0" />
          </font>
       </Button>
-      <Button layoutX="178.0" layoutY="447.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="=">
+      <Button fx:id="iquals" layoutX="178.0" layoutY="447.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="=">
          <font>
             <Font size="27.0" />
          </font>
@@ -40,22 +40,22 @@
             <Font size="27.0" />
          </font>
       </Button>
-      <Button layoutX="14.0" layoutY="447.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="0">
+      <Button fx:id="zero" layoutX="14.0" layoutY="447.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="0">
          <font>
             <Font size="27.0" />
          </font>
       </Button>
-      <Button layoutX="14.0" layoutY="382.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="3">
+      <Button fx:id="three" layoutX="14.0" layoutY="382.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="3">
          <font>
             <Font size="27.0" />
          </font>
       </Button>
-      <Button layoutX="14.0" layoutY="318.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="6">
+      <Button fx:id="six" layoutX="14.0" layoutY="318.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="6">
          <font>
             <Font size="27.0" />
          </font>
       </Button>
-      <Button layoutX="14.0" layoutY="250.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="7">
+      <Button fx:id="seven" layoutX="14.0" layoutY="250.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="7">
          <font>
             <Font size="27.0" />
          </font>
@@ -65,56 +65,56 @@
             <Font size="27.0" />
          </font>
       </Button>
-      <Button layoutX="96.0" layoutY="181.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="I">
+      <Button fx:id="inverse" layoutX="96.0" layoutY="181.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="I">
          <font>
             <Font size="27.0" />
          </font>
       </Button>
-      <Button layoutX="178.0" layoutY="181.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="χ²">
+      <Button fx:id="square" layoutX="178.0" layoutY="181.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="χ²">
          <font>
             <Font size="27.0" />
          </font>
       </Button>
-      <Button layoutX="96.0" layoutY="250.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="8">
+      <Button fx:id="eigth" layoutX="96.0" layoutY="250.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="8">
          <font>
             <Font size="27.0" />
          </font>
       </Button>
-      <Button layoutX="96.0" layoutY="318.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="5">
+      <Button fx:id="five" layoutX="96.0" layoutY="318.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="5">
          <font>
             <Font size="27.0" />
          </font>
       </Button>
-      <Button layoutX="96.0" layoutY="382.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="2">
+      <Button fx:id="two" layoutX="96.0" layoutY="382.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="2">
          <font>
             <Font size="27.0" />
          </font>
       </Button>
-      <Button layoutX="178.0" layoutY="250.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="9">
+      <Button fx:id="nine" layoutX="178.0" layoutY="250.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="9">
          <font>
             <Font size="27.0" />
          </font>
       </Button>
-      <Button layoutX="178.0" layoutY="318.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="4">
+      <Button fx:id="four" layoutX="178.0" layoutY="318.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="4">
          <font>
             <Font size="27.0" />
          </font>
       </Button>
-      <Button layoutX="178.0" layoutY="382.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="1">
+      <Button fx:id="one" layoutX="178.0" layoutY="382.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="70.0" text="1">
          <font>
             <Font size="27.0" />
          </font>
       </Button>
-      <TextField layoutX="22.0" layoutY="109.0" prefHeight="43.0" prefWidth="62.0" />
-      <TextField layoutX="98.0" layoutY="87.0" prefHeight="33.0" prefWidth="33.0" />
-      <TextField layoutX="147.0" layoutY="54.0" prefHeight="43.0" prefWidth="62.0" />
-      <TextField layoutX="147.0" layoutY="109.0" prefHeight="43.0" prefWidth="62.0" />
+      <TextField fx:id="num2" layoutX="22.0" layoutY="109.0" prefHeight="43.0" prefWidth="62.0" />
+      <TextField fx:id="operation" layoutX="98.0" layoutY="87.0" prefHeight="33.0" prefWidth="33.0" />
+      <TextField fx:id="num3" layoutX="147.0" layoutY="54.0" prefHeight="43.0" prefWidth="62.0" />
+      <TextField fx:id="num4" layoutX="147.0" layoutY="109.0" prefHeight="43.0" prefWidth="62.0" />
       <Separator layoutX="29.0" layoutY="102.0" prefHeight="2.0" prefWidth="43.0" />
       <Separator layoutX="157.0" layoutY="101.0" prefHeight="2.0" prefWidth="43.0" />
-      <TextField layoutX="263.0" layoutY="54.0" prefHeight="43.0" prefWidth="62.0" />
-      <TextField layoutX="263.0" layoutY="114.0" prefHeight="43.0" prefWidth="62.0" />
+      <TextField fx:id="result1" layoutX="263.0" layoutY="54.0" prefHeight="43.0" prefWidth="62.0" />
+      <TextField fx:id="result2" layoutX="263.0" layoutY="114.0" prefHeight="43.0" prefWidth="62.0" />
       <Separator layoutX="273.0" layoutY="104.0" prefHeight="3.0" prefWidth="43.0" />
-      <Label layoutX="230.0" layoutY="83.0" text="=">
+      <Label layoutX="230.0" layoutY="83.0" text="=" textFill="WHITE">
          <font>
             <Font size="25.0" />
          </font>
